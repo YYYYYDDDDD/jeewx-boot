@@ -67,6 +67,11 @@
 			<artifactId>jeewx-boot-module-weixin</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.h5huodong.p3</groupId>
+			<artifactId>super-vote</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

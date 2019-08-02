@@ -1,11 +1,11 @@
 Jeewx-Boot  免费微信管家平台
 ==========
 
-当前最新版本： 1.0（发布日期：20190716）
+当前最新版本： 1.0.3（发布日期：20190801）
 
 项目介绍
 -----------------------------------
-Jeewx-Boot 是一款开源免费的微信开发平台，是jeewx的新一代产品，支持微信公众号、小程序官网、微信抽奖活动等！Jeewx-Boot实现了微信公众号管理、小程序CMS、微信抽奖活动等基础功能，便于二次开发，可以快速搭建微信应用。
+Jeewx-Boot是一款开源免费的微信管家平台。支持微信公众号、微信第三方平台、小程序官网、小程序商城、微信抽奖活动等。Jeewx-Boot实现了微信公众号管理、小程序CMS、微信抽奖活动等基础功能，便于二次开发，可以快速搭建微信应用！Jeewx-Boot独创插件开发机制，实现了每一抽奖活动（砸金蛋、刮刮乐、砍价等）、官网、商城都是一个独立的插件，对JAVA来讲就是一个JAR包，可以很方便的做插拔，最终打造像Discuz、微擎一样的插件生态圈。。
 
 ### Jeewx-Boot诞生的目的
 -   Jeewx开源至今已经6年时间，积累无数粉丝，但老版技术陈旧，随着功能增多项目也变的臃肿。之所以打造一款全新的产品Jeewx-Boot，最终目的是打造一个全新的微信开发生态圈。Jeewx-Boot独创插件开发机制，实现了每一抽奖活动（砸金蛋、刮刮乐、砍价等）、官网、商城、小程序都是一个独立的插件，对JAVA来讲就是一个JAR包，可以很方便的做插拔，打造像discuzz、微擎一样的插件生态机制；
@@ -17,12 +17,13 @@ Jeewx-Boot 是一款开源免费的微信开发平台，是jeewx的新一代产�
 -----------------------------------
 
 * QQ交流群 : 97460170
-* 在线文档：http://jeewx-boot.mydoc.io
-* 小程序文档： http://shop.jeewx.com/#/doc/rumen
-* 技术论坛 ：[www.jeecg.org](http://www.jeecg.org)
 * 反馈问题 ：[请发issue](https://github.com/zhangdaiscott/jeewx-boot/issues/new)
+* 开发文档：http://jeewx-boot.mydoc.io
+* 技术论坛 ：[www.jeecg.org](http://www.jeecg.org)
+* 小程序文档： http://shop.jeewx.com/#/doc/rumen
 
-项目说明
+
+基础项目说明
 -----------------------------------
 
 | 项目名   |      中文名      |  备注 |
@@ -30,7 +31,18 @@ Jeewx-Boot 是一款开源免费的微信开发平台，是jeewx的新一代产�
 | jeewx-boot-base-system |  系统用户管理 | 含项目启动类 |
 | jeewx-boot-module-cms |    CMS管理后台   |    |
 | jeewx-boot-module-weixin | 微信公众号管理 |     |	 
+| jeewx-boot-module-api | 共通业务API接口 |     |	
 | [jeewx-app-cms](https://github.com/zhangdaiscott/jeewx-app-cms) | 小程序官网源码 |    采用wepy语言 | 
+
+
+独立插件项目（插件项目在目录huodong下）
+-----------------------------------
+
+| 项目名   |      中文名      |  备注 |
+|----------|:-------------:|------:|
+| jeewx-boot-module-goldenegg | 砸金蛋活动 |  独立数据库脚步   |	
+
+
 
 	  
 系统模块
@@ -70,7 +82,7 @@ Jeewx-Boot 是一款开源免费的微信开发平台，是jeewx的新一代产�
 │  ├─文章管理
 │  ├─后台管理代码
 │  ├─小程序前端代码
-├─微信抽奖活动（即将开源）
+├─微信抽奖活动
 │  ├─砸金蛋
 │  ├─摇一摇
 │  ├─微信砍价
@@ -96,19 +108,33 @@ Jeewx-Boot 是一款开源免费的微信开发平台，是jeewx的新一代产�
 - 1.采用SpringBoot2.1.3 + Mybatis + Velocity 框架技术
 - 2.启动项目，执行下面启动类
 ```
-	jeewx-boot-base-system/src/main/java/com/jeecg/JeewxBootApplication.java
+  jeewx-boot-base-system/src/main/java/com/jeecg/JeewxBootApplication.java
+  登录账号密码：   admin\123456
 ```
 - 3.页面采用模板语言Velocity
 - 4.插件式开发，每个模块独立打成jar
 - 5.数据库、redis配置文件
 ```
-	  jeewx-boot-base-system/src/main/resources/application.yml
+  jeewx-boot-base-system/src/main/resources/application.yml
 ```
 - 6.微信域名配置
 ```
-	  jeewx-boot-base-system/src/main/resources/jeewx.properties
+  jeewx-boot-base-system/src/main/resources/jeewx.properties
 ```
+- 7.maven依赖下载失败，请配置镜像
 
+找到 maven老家 conf/settings.xml
+在<mirrors>标签内增加下面方式的阿里云maven镜像（删除自己的镜像配置）， 最终结果见下面：
+```
+<mirrors>
+       <mirror>
+            <id>nexus-aliyun</id>
+            <mirrorOf>*,!jeecg,!jeecg-snapshots</mirrorOf>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </mirror> 
+ </mirrors>
+```
 
 
 

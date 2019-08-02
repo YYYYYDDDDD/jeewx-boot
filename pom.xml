@@ -8,6 +8,7 @@
 
 	<modules>
 		<module>jeewx-boot-base-system</module>
+		<module>jeewx-boot-base-api</module>
 		<module>jeewx-boot-module-cms</module>
 		<module>jeewx-boot-module-weixin</module>
 	</modules>
@@ -24,25 +25,12 @@
 		<repository>
 			<id>jeecg</id>
 			<name>jeecg Repository</name>
-			<url>http://maven.jeecg.org/nexus/content/repositories/jeecg</url>
+			<url>http://maven.jeewx.com/nexus/content/repositories/jeecg</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 	</repositories>
-
-	<distributionManagement>
-		<repository>
-			<id>jeecg</id>
-			<name>jeecg Repository</name>
-			<url>http://maven.jeecg.com:8090/nexus/content/repositories/jeecg</url>
-		</repository>
-		<snapshotRepository>
-			<id>jeecg-snapshots</id>
-			<name>jeecg Snapshot Repository</name>
-			<url>http://maven.jeecg.com:8090/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -60,13 +48,14 @@
 		<ueditor-mini.version>1.0</ueditor-mini.version>
 
 		<jeewx-api.version>1.3.1</jeewx-api.version>
-		<jeewx-boot-start-core.version>1.0.3</jeewx-boot-start-core.version>
+		<jeewx-boot-start-core.version>1.0.5</jeewx-boot-start-core.version>
 
 		<aliyun-java-sdk-core.version>3.2.3</aliyun-java-sdk-core.version>
 		<aliyun-java-sdk-dysmsapi.version>1.0.0</aliyun-java-sdk-dysmsapi.version>
 		<xstream.version>1.4.7</xstream.version>
 		<poi.version>3.9</poi.version>
 		<hutool.version>4.5.15</hutool.version>
+		<jeewx-boot-base-api.version>1.0.0</jeewx-boot-base-api.version>
 	</properties>
 
 	<dependencyManagement>
@@ -209,6 +198,12 @@
 			    <version>${hutool.version}</version>
 			</dependency>
 		
+			<!-- Jeewx Boot 插件 -->
+			<dependency>
+			    <groupId>org.jeewxframework.boot</groupId>
+			    <artifactId>jeewx-boot-base-api</artifactId>
+			    <version>${jeewx-boot-base-api.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

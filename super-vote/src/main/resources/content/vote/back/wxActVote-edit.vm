@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+	        	<button type="button" class="btn btn-primary" id="formSubmit"><span class="glyphicon glyphicon-ok"></span> 保存</button>
+				<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/vote/back/wxActVote/list.do')"><span class="glyphicon glyphicon-circle-arrow-left"></span> 返回</button>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/vote/back/wxActVote/doEdit.do" method="POST">
+						 <input type="hidden" id="btn_sub" class="btn_sub" />
+						 <input type="hidden" value="$!{wxActVote.id}" name="id" id="id" />
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动名称</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.title}" name="title" id="title" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动描述</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.description}" name="description" id="description" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">开始时间</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{wxActVote.starttime})" name="starttime" id="starttime" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">结束时间</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{wxActVote.endtime})" name="endtime" id="endtime" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">背景图</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.banner}" name="banner" id="banner" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">入口地址</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.hdurl}" name="hdurl" id="hdurl" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">短链接</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.shortUrl}" name="shortUrl" id="shortUrl" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否关注可参加(0：否，1：是)</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.foucsUserCanJoin}" name="foucsUserCanJoin" id="foucsUserCanJoin" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否绑定手机可参加（0：否，1：是）</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.bindingMobileCanJoin}" name="bindingMobileCanJoin" id="bindingMobileCanJoin" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">每日投票次数</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.numDay}" name="numDay" id="numDay" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">公众号原始id</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.jwid}" name="jwid" id="jwid" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动编码</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.projectCode}" name="projectCode" id="projectCode" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">创建时间</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{wxActVote.createTime})" name="createTime" id="createTime" class="form-control"/>
+												    </div>
+												</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script>  

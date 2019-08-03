@@ -137,7 +137,7 @@ CREATE TABLE `cms_site` (
 -- ----------------------------
 INSERT INTO `cms_site` VALUES ('4028810c6b92ed2b016b92ed2b760000', null, null, '2019-06-26 16:35:45', null, '', '', '哈喽', 'wxhome', null, '', '', null, null, null, 'cms', '', '', '', '', null);
 INSERT INTO `cms_site` VALUES ('4028810c6b92fa6d016b92fa6d610000', null, '2019-06-28 18:54:13', '2019-06-26 16:50:13', 'admin', '', 'sdk1561719251197.jpg', '测试', 'default', null, '', '', 'gh_20419b74f848', null, null, 'cms', '', '', '', '', 'gh_f28e66390fc9_344 (shop)1561719247914.jpg');
-INSERT INTO `cms_site` VALUES ('ff808081661e74bb01661f12de5e03d6', null, '2018-10-10 16:28:18', '2018-09-28 15:27:02', 'admin', '', 'logo1539160087728.png', '捷微官网', 'wxhome', '<p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">中国·北京·朝阳区科荟前街1号院奥林佳泰大厦9层929</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">公司：北京囯炬信息技术有限公司</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">邮编：100190</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">电话：010-64808099</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">邮箱：jeecg@sina.com</span></p><p><br/></p>', '116.381319', '40.015457', 'gh_f268aa85d1c7', 'http://www.h5huodong.com/cms/index.do?mainId=ff808081661e74bb01661f12de5e03d6', 'https://w.url.cn/s/AoUtL1H', 'cms', null, null, null, null, null);
+INSERT INTO `cms_site` VALUES ('ff808081661e74bb01661f12de5e03d6', null, '2018-10-10 16:28:18', '2018-09-28 15:27:02', 'admin', '', 'logo1539160087728.png', '捷微官网', 'wxhome', '<p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">中国·北京·朝阳区科荟前街1号院奥林佳泰大厦9层929</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">公司：北京囯炬信息技术有限公司</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">邮编：100190</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">电话：010-64808099</span></p><p style=\"color: rgb(0, 0, 0); white-space: normal;\"><span lucida=\"\" courier=\"\" font-size:=\"\" white-space:=\"\" background-color:=\"\" style=\"color: rgb(34, 34, 34);\">邮箱：jeecg@sina.com</span></p><p><br/></p>', '116.381319', '40.015457', 'gh_0851429112ed', 'http://www.h5huodong.com/cms/index.do?mainId=ff808081661e74bb01661f12de5e03d6', 'https://w.url.cn/s/AoUtL1H', 'cms', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for cms_style
@@ -665,8 +665,8 @@ CREATE TABLE `jw_system_user_jwid` (
 -- ----------------------------
 -- Records of jw_system_user_jwid
 -- ----------------------------
-INSERT INTO `jw_system_user_jwid` VALUES ('2a72f87feb0910378406f37e9d9928f9', 'jeecg', 'gh_f268aa85d1c7', null);
-INSERT INTO `jw_system_user_jwid` VALUES ('3caf8a109d0c11e78911525400077487', 'admin', 'gh_f268aa85d1c7', null);
+INSERT INTO `jw_system_user_jwid` VALUES ('2a72f87feb0910378406f37e9d9928f9', 'jeecg', 'gh_0851429112ed', null);
+INSERT INTO `jw_system_user_jwid` VALUES ('3caf8a109d0c11e78911525400077487', 'admin', 'gh_0851429112ed', null);
 
 -- ----------------------------
 -- Table structure for jw_system_user_role_rel
@@ -723,7 +723,7 @@ CREATE TABLE `jw_web_jwid` (
 -- ----------------------------
 -- Records of jw_web_jwid
 -- ----------------------------
-INSERT INTO `jw_web_jwid` VALUES ('ff80808151f1628c0151f16470cb0006', 'gh_f268aa85d1c7', '捷微活动管家', '', '6669fede4e5047229b2f57c020eee13f.jpg', 'admin', null, 'guojusoft', 'wxc60a4d9cbac8092d', '?', '1', '1', 'oQwQRFwLMBfm_y2JUaEPKUhEgjvDOs74LAAv_kYyGwWGZixMqHyGSSiCFAQCC', '2019-07-12 18:30:01', 'IpK_1T69hDhZkLQTlwsAXyjkZaTEYbX_kE6IkQ8b5WYOjIwZ4krIfp2iANwfePSHRZ2dY0ccPrEg62U_P3vcHg', '2019-07-12 18:30:01', 'kgt8ON7yVITDhtdwci0qeeC2RWfOAQ1Sc_HMdjrzSlrhTCHlT3OE-6tp0NFL378JxIAuJhAjnQ2yDS_yeAiwQw', '2019-07-12 18:30:01', '', null, null, null, null, null, null, 'jeewx', '1');
+INSERT INTO `jw_web_jwid` VALUES ('ff80808151f1628c0151f16470cb0006', 'gh_0851429112ed', '捷微活动管家', '', '6669fede4e5047229b2f57c020eee13f.jpg', 'admin', null, 'guojusoft', 'wxc60a4d9cbac8092d', '?', '1', '1', 'oQwQRFwLMBfm_y2JUaEPKUhEgjvDOs74LAAv_kYyGwWGZixMqHyGSSiCFAQCC', '2019-07-12 18:30:01', 'IpK_1T69hDhZkLQTlwsAXyjkZaTEYbX_kE6IkQ8b5WYOjIwZ4krIfp2iANwfePSHRZ2dY0ccPrEg62U_P3vcHg', '2019-07-12 18:30:01', 'kgt8ON7yVITDhtdwci0qeeC2RWfOAQ1Sc_HMdjrzSlrhTCHlT3OE-6tp0NFL378JxIAuJhAjnQ2yDS_yeAiwQw', '2019-07-12 18:30:01', '', null, null, null, null, null, null, 'jeewx', '1');
 
 -- ----------------------------
 -- Table structure for weixin_autoresponse
@@ -751,7 +751,7 @@ CREATE TABLE `weixin_autoresponse` (
 -- ----------------------------
 -- Records of weixin_autoresponse
 -- ----------------------------
-INSERT INTO `weixin_autoresponse` VALUES ('4028810c6be55ffe016be566c7ff000a', '文档', 'text', '4028810c6be55ffe016be56315800005', '技术文档', 'gh_f268aa85d1c7', '1', 'admin', '2019-07-12 16:57:26', null, null, null);
+INSERT INTO `weixin_autoresponse` VALUES ('4028810c6be55ffe016be566c7ff000a', '文档', 'text', '4028810c6be55ffe016be56315800005', '技术文档', 'gh_0851429112ed', '1', 'admin', '2019-07-12 16:57:26', null, null, null);
 
 -- ----------------------------
 -- Table structure for weixin_autoresponse_default
@@ -777,7 +777,7 @@ CREATE TABLE `weixin_autoresponse_default` (
 -- ----------------------------
 -- Records of weixin_autoresponse_default
 -- ----------------------------
-INSERT INTO `weixin_autoresponse_default` VALUES ('4028810c6be55ffe016be5669eee0009', 'gh_f268aa85d1c7', null, 'text', '4028810c6bb69a33016bb69a33600000', '欢迎关注', 'text', 'admin', '2019-07-12 16:57:16', null, null);
+INSERT INTO `weixin_autoresponse_default` VALUES ('4028810c6be55ffe016be5669eee0009', 'gh_0851429112ed', null, 'text', '4028810c6bb69a33016bb69a33600000', '欢迎关注', 'text', 'admin', '2019-07-12 16:57:16', null, null);
 
 -- ----------------------------
 -- Table structure for weixin_gzuser
@@ -898,13 +898,13 @@ CREATE TABLE `weixin_menu` (
 -- ----------------------------
 -- Records of weixin_menu
 -- ----------------------------
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be55ffe350000', null, '1562921401904', 'click', '开源项目', '', 'text', '1', '4028810c6bb69a33016bb69a33600000', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:50:01', null, null);
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be56031ca0001', '', '1562921415113', 'click', '技术文档', '', 'text', '2', '4028810c6be55ffe016be56315800005', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:50:15', 'admin', '2019-07-12 16:53:34');
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be560c31f0002', '4028810c6be55ffe016be55ffe350000', '1562921452318', 'view', 'JeecgBoot开发平台', 'https://github.com/zhangdaiscott/jeecg-boot', 'text', '11', '4028810c6bb69a33016bb69a33600000', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:50:52', null, null);
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be56105270003', '4028810c6be55ffe016be55ffe350000', '1562921469223', 'view', 'jeewx-boot微信平台', 'https://github.com/zhangdaiscott/jeewx-boot', 'text', '12', '4028810c6bb69a33016bb69a33600000', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:51:09', 'admin', '2019-07-12 16:51:16');
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be561cc230004', null, '1562921520163', 'click', '官网', '', 'text', '3', '4028810c6bb69a33016bb69a33600000', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:52:00', null, null);
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be5638d250006', '4028810c6be55ffe016be561cc230004', '1562921635109', 'view', 'jeecg官网', 'http://www.jeecg.com', 'text', '31', '4028810c6bb69a33016bb69a33600000', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:53:55', null, null);
-INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be563f1ed0007', '4028810c6be55ffe016be561cc230004', '1562921660909', 'view', 'Jeewx官网', 'http://www.jeewx.com', 'text', '32', '4028810c6bb69a33016bb69a33600000', 'gh_f268aa85d1c7', '', '', 'admin', '2019-07-12 16:54:20', 'admin', '2019-07-12 16:54:35');
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be55ffe350000', null, '1562921401904', 'click', '开源项目', '', 'text', '1', '4028810c6bb69a33016bb69a33600000', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:50:01', null, null);
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be56031ca0001', '', '1562921415113', 'click', '技术文档', '', 'text', '2', '4028810c6be55ffe016be56315800005', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:50:15', 'admin', '2019-07-12 16:53:34');
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be560c31f0002', '4028810c6be55ffe016be55ffe350000', '1562921452318', 'view', 'JeecgBoot开发平台', 'https://github.com/zhangdaiscott/jeecg-boot', 'text', '11', '4028810c6bb69a33016bb69a33600000', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:50:52', null, null);
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be56105270003', '4028810c6be55ffe016be55ffe350000', '1562921469223', 'view', 'jeewx-boot微信平台', 'https://github.com/zhangdaiscott/jeewx-boot', 'text', '12', '4028810c6bb69a33016bb69a33600000', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:51:09', 'admin', '2019-07-12 16:51:16');
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be561cc230004', null, '1562921520163', 'click', '官网', '', 'text', '3', '4028810c6bb69a33016bb69a33600000', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:52:00', null, null);
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be5638d250006', '4028810c6be55ffe016be561cc230004', '1562921635109', 'view', 'jeecg官网', 'http://www.jeecg.com', 'text', '31', '4028810c6bb69a33016bb69a33600000', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:53:55', null, null);
+INSERT INTO `weixin_menu` VALUES ('4028810c6be55ffe016be563f1ed0007', '4028810c6be55ffe016be561cc230004', '1562921660909', 'view', 'Jeewx官网', 'http://www.jeewx.com', 'text', '32', '4028810c6bb69a33016bb69a33600000', 'gh_0851429112ed', '', '', 'admin', '2019-07-12 16:54:20', 'admin', '2019-07-12 16:54:35');
 
 -- ----------------------------
 -- Table structure for weixin_newsitem
@@ -956,7 +956,7 @@ CREATE TABLE `weixin_newstemplate` (
 -- ----------------------------
 -- Records of weixin_newstemplate
 -- ----------------------------
-INSERT INTO `weixin_newstemplate` VALUES ('4028810c6bb1b80a016bb1b80abd0000', '111', 'news', null, 'gh_f268aa85d1c7', '3', null, 'admin', '2019-07-02 16:05:57', 'admin', '2019-07-12 16:58:03');
+INSERT INTO `weixin_newstemplate` VALUES ('4028810c6bb1b80a016bb1b80abd0000', '111', 'news', null, 'gh_0851429112ed', '3', null, 'admin', '2019-07-02 16:05:57', 'admin', '2019-07-12 16:58:03');
 
 -- ----------------------------
 -- Table structure for weixin_receivetext
@@ -1030,7 +1030,7 @@ CREATE TABLE `weixin_subscribe` (
 -- ----------------------------
 -- Records of weixin_subscribe
 -- ----------------------------
-INSERT INTO `weixin_subscribe` VALUES ('4028810c6be55ffe016be56688220008', 'gh_f268aa85d1c7', 'text', '4028810c6bb69a33016bb69a33600000', '欢迎关注', 'admin', '2019-07-12 16:57:10', null, null);
+INSERT INTO `weixin_subscribe` VALUES ('4028810c6be55ffe016be56688220008', 'gh_0851429112ed', 'text', '4028810c6bb69a33016bb69a33600000', '欢迎关注', 'admin', '2019-07-12 16:57:10', null, null);
 
 -- ----------------------------
 -- Table structure for weixin_tag
@@ -1247,8 +1247,8 @@ CREATE TABLE `weixin_texttemplate` (
 -- ----------------------------
 -- Records of weixin_texttemplate
 -- ----------------------------
-INSERT INTO `weixin_texttemplate` VALUES ('4028810c6bb69a33016bb69a33600000', '欢迎关注', '欢迎您关注JEEWX，捷微管家是一款JAVA的开源微信管家，荣获2014年微信开发商大会第一名！平台涵盖：用户、消息、素材、统计、微网站、公众号、小程序官网等模块，极速满足公众号运营的各种需求，服务于万千微信公众号。\n\n JEECG论坛： www.jeecg.org\n 捷微官网 ： www.jeewx.com', 'gh_f268aa85d1c7', 'admin', '2019-07-03 14:51:27', 'admin', '2019-07-12 16:56:58');
-INSERT INTO `weixin_texttemplate` VALUES ('4028810c6be55ffe016be56315800005', '技术文档', 'JeecgBoot文档:    http://jeecg-boot.mydoc.io\nJeewxBoot文档:  http://jeewx-boot.mydoc.io\n小程序开发： http://shop.jeewx.com/#/doc/rumen\n', 'gh_f268aa85d1c7', 'admin', '2019-07-12 16:53:24', null, null);
+INSERT INTO `weixin_texttemplate` VALUES ('4028810c6bb69a33016bb69a33600000', '欢迎关注', '欢迎您关注JEEWX，捷微管家是一款JAVA的开源微信管家，荣获2014年微信开发商大会第一名！平台涵盖：用户、消息、素材、统计、微网站、公众号、小程序官网等模块，极速满足公众号运营的各种需求，服务于万千微信公众号。\n\n JEECG论坛： www.jeecg.org\n 捷微官网 ： www.jeewx.com', 'gh_0851429112ed', 'admin', '2019-07-03 14:51:27', 'admin', '2019-07-12 16:56:58');
+INSERT INTO `weixin_texttemplate` VALUES ('4028810c6be55ffe016be56315800005', '技术文档', 'JeecgBoot文档:    http://jeecg-boot.mydoc.io\nJeewxBoot文档:  http://jeewx-boot.mydoc.io\n小程序开发： http://shop.jeewx.com/#/doc/rumen\n', 'gh_0851429112ed', 'admin', '2019-07-12 16:53:24', null, null);
 
 
 

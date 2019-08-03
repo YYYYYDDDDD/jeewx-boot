@@ -55,7 +55,7 @@
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-core</artifactId>
 		</dependency>
-		
+
 		<!--  modules -->
 		<dependency>
 			<groupId>org.jeewxframework.boot</groupId>
@@ -65,6 +65,11 @@
 		<dependency>
 			<groupId>org.jeewxframework.boot</groupId>
 			<artifactId>jeewx-boot-module-weixin</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.h5huodong.p3</groupId>
+			<artifactId>jeewx-boot-module-goldenegg</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
@@ -79,6 +84,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>

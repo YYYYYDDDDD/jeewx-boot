@@ -25,7 +25,7 @@ CREATE TABLE `wx_act_goldeneggs` (
   KEY `idx_jwid` (`jwid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='砸金蛋活动表';
 
-INSERT INTO `wx_act_goldeneggs` (`id`, `title`, `description`, `starttime`, `endtime`, `template_code`, `banner`, `count`, `hdurl`, `foucs_user_can_join`, `binding_mobile_can_join`, `num_per_day`, `prize_status`, `jwid`, `project_code`, `create_by`, `create_time`, `short_url`) VALUES ('2c9b8381552a77c901552a77c9020000', '砸金蛋', '<p><strong>一、活动时间：</strong><br/>2016年1月1日至2016年12月31日<br/><strong>二、抽奖方式：</strong><br/>每人每天可抽3次。<br/><strong>三、兑奖须知：</strong><br/>1、用户中奖后请点击领奖，填写姓名、电话、地址，或进入“我的奖品”页面点击兑奖填写。<br/>2、奖品将在10日内送出，到货以实际时间为准。<br/>3、本活动由捷微H5平台提供技术支持，最终解释权归活动主办方所有。<br/></p>', '2016-06-07 00:00:00', '2019-10-22 00:00:00', NULL, '', '1000', 'http://h5.jeecg.com/jeewx/weixinLinkController.do?link&id=ff808081551fc4fe01554cc514067e25&actId=2c9b8381552a77c901552a77c9020000&jwid=gh_f268aa85d1c7', '0', '', '10', '1', 'gh_f268aa85d1c7', 'goldeneggs', 'admin', '2016-11-07 15:18:13', NULL);
+INSERT INTO `wx_act_goldeneggs` (`id`, `title`, `description`, `starttime`, `endtime`, `template_code`, `banner`, `count`, `hdurl`, `foucs_user_can_join`, `binding_mobile_can_join`, `num_per_day`, `prize_status`, `jwid`, `project_code`, `create_by`, `create_time`, `short_url`) VALUES ('2c9b8381552a77c901552a77c9020000', '砸金蛋', '<p><strong>一、活动时间：</strong><br/>2016年1月1日至2016年12月31日<br/><strong>二、抽奖方式：</strong><br/>每人每天可抽3次。<br/><strong>三、兑奖须知：</strong><br/>1、用户中奖后请点击领奖，填写姓名、电话、地址，或进入“我的奖品”页面点击兑奖填写。<br/>2、奖品将在10日内送出，到货以实际时间为准。<br/>3、本活动由捷微H5平台提供技术支持，最终解释权归活动主办方所有。<br/></p>', '2016-06-07 00:00:00', '2019-10-22 00:00:00', NULL, '', '1000', 'http://h5.jeecg.com/jeewx/weixinLinkController.do?link&id=ff808081551fc4fe01554cc514067e25&actId=2c9b8381552a77c901552a77c9020000&jwid=gh_0851429112ed', '0', '', '10', '1', 'gh_0851429112ed', 'goldeneggs', 'admin', '2016-11-07 15:18:13', NULL);
 
 DROP TABLE IF EXISTS `wx_act_goldeneggs_awards`;
 CREATE TABLE `wx_act_goldeneggs_awards` (
@@ -40,9 +40,9 @@ CREATE TABLE `wx_act_goldeneggs_awards` (
   KEY `idx_jwid` (`jwid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='砸金蛋奖项表';
 
-INSERT INTO `wx_act_goldeneggs_awards` (`id`, `awards_name`, `jwid`, `awards_value`, `create_by`) VALUES ('402880ee5127c20a0151281efbd00006', '一等奖', 'gh_f268aa85d1c7', '10', 'admin');
-INSERT INTO `wx_act_goldeneggs_awards` (`id`, `awards_name`, `jwid`, `awards_value`, `create_by`) VALUES ('402880ee5127c20a0151281f395f000', '二等奖', 'gh_f268aa85d1c7', '50', 'admin');
-INSERT INTO `wx_act_goldeneggs_awards` (`id`, `awards_name`, `jwid`, `awards_value`, `create_by`) VALUES ('402880ee5127c20a0151281f69740008', '三等奖', 'gh_f268aa85d1c7', '100', 'admin');
+INSERT INTO `wx_act_goldeneggs_awards` (`id`, `awards_name`, `jwid`, `awards_value`, `create_by`) VALUES ('402880ee5127c20a0151281efbd00006', '一等奖', 'gh_0851429112ed', '10', 'admin');
+INSERT INTO `wx_act_goldeneggs_awards` (`id`, `awards_name`, `jwid`, `awards_value`, `create_by`) VALUES ('402880ee5127c20a0151281f395f000', '二等奖', 'gh_0851429112ed', '50', 'admin');
+INSERT INTO `wx_act_goldeneggs_awards` (`id`, `awards_name`, `jwid`, `awards_value`, `create_by`) VALUES ('402880ee5127c20a0151281f69740008', '三等奖', 'gh_0851429112ed', '100', 'admin');
 
 
 DROP TABLE IF EXISTS `wx_act_goldeneggs_prizes`;
@@ -55,9 +55,9 @@ CREATE TABLE `wx_act_goldeneggs_prizes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='砸金蛋奖品表';
 
-INSERT INTO `wx_act_goldeneggs_prizes` (`id`, `name`, `img`, `jwid`, `create_by`) VALUES ('402880ee5127c20a01512823001d000c', 'iphone6 plus', '/content/goldeneggs/img/default_image.png', 'gh_f268aa85d1c7', 'admin');
-INSERT INTO `wx_act_goldeneggs_prizes` (`id`, `name`, `img`, `jwid`, `create_by`) VALUES ('402880ee5127c20a01512823417c000d', 'iPhone6s', '/content/goldeneggs/img/default_image.png', 'gh_f268aa85d1c7', 'admin');
-INSERT INTO `wx_act_goldeneggs_prizes` (`id`, `name`, `img`, `jwid`, `create_by`) VALUES ('402880ee5127c20a015128237268000e', '华为', '/content/goldeneggs/img/default_image.png', 'gh_f268aa85d1c7', 'admin');
+INSERT INTO `wx_act_goldeneggs_prizes` (`id`, `name`, `img`, `jwid`, `create_by`) VALUES ('402880ee5127c20a01512823001d000c', 'iphone6 plus', '/content/goldeneggs/img/default_image.png', 'gh_0851429112ed', 'admin');
+INSERT INTO `wx_act_goldeneggs_prizes` (`id`, `name`, `img`, `jwid`, `create_by`) VALUES ('402880ee5127c20a01512823417c000d', 'iPhone6s', '/content/goldeneggs/img/default_image.png', 'gh_0851429112ed', 'admin');
+INSERT INTO `wx_act_goldeneggs_prizes` (`id`, `name`, `img`, `jwid`, `create_by`) VALUES ('402880ee5127c20a015128237268000e', '华为', '/content/goldeneggs/img/default_image.png', 'gh_0851429112ed', 'admin');
 
 DROP TABLE IF EXISTS `wx_act_goldeneggs_record`;
 CREATE TABLE `wx_act_goldeneggs_record` (
@@ -115,9 +115,9 @@ CREATE TABLE `wx_act_goldeneggs_relation` (
   KEY `idx_actid` (`act_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='砸金蛋奖品配置表';
 
-INSERT INTO `wx_act_goldeneggs_relation` (`id`, `prize_id`, `act_id`, `jwid`, `award_id`, `amount`, `remain_num`, `probability`) VALUES ('402880ec58afbd900158afff43d00014', '402880ee5127c20a01512823001d000c', '2c9b8381552a77c901552a77c9020000', 'gh_f268aa85d1c7', '402880ee5127c20a0151281efbd00006', '10', '10', '0.10');
-INSERT INTO `wx_act_goldeneggs_relation` (`id`, `prize_id`, `act_id`, `jwid`, `award_id`, `amount`, `remain_num`, `probability`) VALUES ('402880ec58afbd900158afff43d30015', '402880ee5127c20a01512823417c000d', '2c9b8381552a77c901552a77c9020000', 'gh_f268aa85d1c7', '402880ee5127c20a0151281f395f000', '10', '10', '0.10');
-INSERT INTO `wx_act_goldeneggs_relation` (`id`, `prize_id`, `act_id`, `jwid`, `award_id`, `amount`, `remain_num`, `probability`) VALUES ('402880ec58afbd900158afff43d60016', '402880ee5127c20a015128237268000e', '2c9b8381552a77c901552a77c9020000', 'gh_f268aa85d1c7', '402880ee5127c20a0151281f69740008', '10', '10', '0.10');
+INSERT INTO `wx_act_goldeneggs_relation` (`id`, `prize_id`, `act_id`, `jwid`, `award_id`, `amount`, `remain_num`, `probability`) VALUES ('402880ec58afbd900158afff43d00014', '402880ee5127c20a01512823001d000c', '2c9b8381552a77c901552a77c9020000', 'gh_0851429112ed', '402880ee5127c20a0151281efbd00006', '10', '10', '0.10');
+INSERT INTO `wx_act_goldeneggs_relation` (`id`, `prize_id`, `act_id`, `jwid`, `award_id`, `amount`, `remain_num`, `probability`) VALUES ('402880ec58afbd900158afff43d30015', '402880ee5127c20a01512823417c000d', '2c9b8381552a77c901552a77c9020000', 'gh_0851429112ed', '402880ee5127c20a0151281f395f000', '10', '10', '0.10');
+INSERT INTO `wx_act_goldeneggs_relation` (`id`, `prize_id`, `act_id`, `jwid`, `award_id`, `amount`, `remain_num`, `probability`) VALUES ('402880ec58afbd900158afff43d60016', '402880ee5127c20a015128237268000e', '2c9b8381552a77c901552a77c9020000', 'gh_0851429112ed', '402880ee5127c20a0151281f69740008', '10', '10', '0.10');
 
 -- 活动文本
 delete from jw_system_act_txt where act_code='2c9b8381552a77c901552a77c9020000';

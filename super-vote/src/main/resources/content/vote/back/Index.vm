@@ -1,0 +1,171 @@
+#set($version='?v=0.3.6')
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="" />
+<title>$!{goldeneggs.title}</title>
+<link href="$!{basePath}/plug-in/plugin/hplus/css/font-awesome.min.css" rel="stylesheet">
+<link href="$!{basePath}/content/goldeneggs/css/ggl.css$!{version}" rel="stylesheet" type="text/css"/>
+<link href="$!{basePath}/content/goldeneggs/css/activity-style.css$!{version}" rel="stylesheet" type="text/css">
+<link href="$!{basePath}/content/goldeneggs/css/style.css$!{version}" rel="stylesheet" type="text/css">
+<script src="$!{basePath}/content/goldeneggs/js/jquery.js$!{version}" type="text/javascript"></script> 
+<style type="text/css">
+</style>
+</head>
+<body>
+<div class="box">
+<div id="main" class="main" style="background-size: cover;height: 30rem;">
+	<a onclick="signup()"style="background: url('$!{basePath}/content/goldeneggs/img/default_image.png') no-repeat center center;opacity:0.75;"><label>我要报名</label></a>
+	<table id="signUsers">
+		#foreach($member in $signUpUsers)
+			<tr>
+				<td>$member.nickname</td>
+				<td>投票数:$member.votes</td>
+				<td><a onclick='clickVote(this)'>点击投票</a></td>
+				<td><input type="hidden" value="$!{member.openid}"/></td>
+			</tr>
+		#end
+	</table>
+	<h2 class="top_title"></h2>
+	<div class="egg" id="egg" style="width:100%;">
+		<ul class="eggList" style="padding-top: 46%;padding-left: 0%;">
+			<p class="resultTip" id="resultTip"><span id="result"></span></p>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="boxcontent boxyellow">
+<div class="boxcontent boxyellow">
+<div class="box">
+<div class="title-green">活动说明：</div>
+</div>
+</div>
+<div class="top_bar" style="-webkit-transform:translate3d(0,0,0)">
+<div style="height:1px;clear:both"></div>
+<div style="height:5rem"></div>
+<div class="top_bar" style="-webkit-transform:translate3d(0,0,0)">
+  <nav>
+    <ul id="top_menu" class="top_menu">
+	    <li>
+	      <a onclick="myprize()"><img src="../content/goldeneggs/img/plugmenu9.png"><label>投票</label></a>
+	    </li>  
+		<li class="home">
+		  <a onclick="home()"style="background: url('$!{basePath}/content/goldeneggs/img/home.png') no-repeat center center;opacity:0.75;"></a>
+		</li>
+	    <li>
+	      <a onclick="AllPrize()"><img src="../content/goldeneggs/img/plugmenu12.png"><label>投票名单</label></a>
+	    </li>   
+    </ul>
+  </nav>
+</div>
+</div>
+<div style="opacity: 1;display:none" class="bombScreen" id="subscript">
+   <div style="width:70%;margin: 0 auto;margin-top:30%;">
+       <p style="text-align:center;color:#fff;font-size:1.3rem;padding-top:2%">关注下面公共号才能参与活动</p>
+       <div style="width:90%;margin: 0 auto;auto;margin-top:4%">
+          <img src="$!{basePath}$!{qrcodeUrl}" style="width:100%;"/>
+    	  <p style="text-align:center;color:#fff;font-size:1.3rem;padding-bottom:2%">长按识别二维码关注</p>
+		  <p style="text-align:center;color:#fff;font-size:1.3rem;">$!{dictTool.getSysText('focus_explain',$!{weixinDto.actId})}</p>
+      </div>
+  </div>
+</div>
+<input type="hidden" name="jwid" id="jwid" value="$!{weixinDto.jwid}"/>
+<input type="hidden" name="openid" id="openid" value="$!{weixinDto.openid}"/>
+<input type="hidden" name="actId" id="actId" value="$!{weixinDto.actId}"/>
+<input type="hidden" name="awardsNum" id="awardsNum" value="$!{awardsNum}"/>
+<input type="hidden" name="remainNumDay" id="remainNumDay" value="$!{remainNumDay}"/>
+<input type="hidden" name="prize" id="prize" value="-1"/>
+<input type="hidden" name="prizetype" id="prizetype" value=""/>
+<input type="hidden" name="code" id="code" value=""/>
+<!-- 活动运行状态  start-->
+#if($!{act_Status}==false)
+<div style="opacity: 1;width: 100%;height: 100%;position: fixed;z-index: 1000;top: 0px;left: 0px;background: rgba(0, 0, 0, 0.8) none repeat scroll 0% 0%;">
+    <div style="width:100%;height:100%;display: flex;align-items: center;justify-content: center;font-size: 2rem;color: #fff;">$!{act_Status_Msg}</div> 	
+</div>
+#end
+<!-- 活动运行状态  end-->
+</body>
+</html>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript">
+		function signup(){
+			var jwid=$("#jwid").val();
+			var actId=$("#actId").val();
+			var openid=$("#openid").val();
+			jQuery.ajax({
+				url:"../vote/toSignUp.do",
+				method:"POST",
+				dataType:"JSON",
+				async:false,
+				data:{openid:openid,actId:actId,jwid:jwid},
+				success:function(data){
+					if(data.success){
+						if (data.obj == 0){
+							alert("重复报名")
+							$("#result").html("重复报名");
+							setTimeout(function(){
+								$("#result").html("");
+							},2000)
+
+							return;
+						}
+						else {
+							$("#signUsers").append("<tr><td>"+data.obj.nickname+"</td><td>投票数:0</td><td><a onclick='clickVote(this)'>点击投票</a></td><td><input type='hidden' value='"+openid+"'/></td><tr>");
+						}
+					}else{
+						prize=-1;
+						$("#prize").val(prize);
+						alert(data.msg);
+					}
+				}
+			});
+		}
+
+		function clickVote(obj) {
+			var jwid=$("#jwid").val();
+			var actId=$("#actId").val();
+			var openid=$("#openid").val();
+			jQuery.ajax({
+				url:"../vote/clickVote.do",
+				method:"POST",
+				dataType:"JSON",
+				async:false,
+				data:{openid:openid,actId:actId,jwid:jwid},
+				success:function(data){
+					if(data.success){
+						count = $(obj).parent().prev().html().split(':')[1];
+                        $(obj).parent().prev().html("投票数:"+ ++count)
+					}
+				}
+			});
+
+		}
+		//跳转活动链接
+		// function home(){
+		//  		var jwid=$("#jwid").val();
+		// 		var actId=$("#actId").val();
+		// 		var openid=$("#openid").val();
+		// 	    url="../goldeneggs/toGoldenegg.do";
+		// 		location.href= url + "?actId=" + actId + "&jwid=" + jwid + "&openid=" +openid;
+		// }
+		</script>
+<script>
+	$!{dictTool.getSysText('statistics',$!{weixinDto.actId})}
+</script>
+<style>
+.bombScreen {
+	width: 100%;
+	height:100%;
+	position: fixed;
+	z-index:50000;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.8) none repeat scroll 0% 0%;
+}
+</style>

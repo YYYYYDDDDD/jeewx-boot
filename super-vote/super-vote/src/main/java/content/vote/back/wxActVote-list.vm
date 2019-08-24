@@ -12,19 +12,13 @@
 								  <div class="panel-body">
 								  		<div class="search">
 															 <div class="form-group col-sm-3">
-															    <label for="projectCode" class="control-label col-sm-3 line34">活动编码</label>
-															     <div class="col-sm-8">
-															    <input type="text" name="projectCode" id="projectCode" value="$!{wxActVote.projectCode}" class="form-control">
-															  	</div>
-															 </div>
-															 <div class="form-group col-sm-3">
 															    <label for="title" class="control-label col-sm-3 line34">活动名称</label>
 															     <div class="col-sm-8">
 															    <input type="text" name="title" id="title" value="$!{wxActVote.title}" class="form-control">
 															  	</div>
 															 </div>
 															 <div class="form-group col-sm-3">
-															    <label for="description" class="control-label col-sm-3 line34">活动介绍</label>
+															    <label for="description" class="control-label col-sm-3 line34">活动描述</label>
 															     <div class="col-sm-8">
 															    <input type="text" name="description" id="description" value="$!{wxActVote.description}" class="form-control">
 															  	</div>
@@ -42,33 +36,15 @@
 															  	</div>
 															 </div>
 															 <div class="form-group col-sm-3">
-															    <label for="sortType" class="control-label col-sm-3 line34">排序方式(1：参与时间 ，2：票数 ，3：编号)</label>
+															    <label for="banner" class="control-label col-sm-3 line34">背景图</label>
 															     <div class="col-sm-8">
-															    <input type="text" name="sortType" id="sortType" value="$!{wxActVote.sortType}" class="form-control">
+															    <input type="text" name="banner" id="banner" value="$!{wxActVote.banner}" class="form-control">
 															  	</div>
 															 </div>
 															 <div class="form-group col-sm-3">
-															    <label for="votenumOneday" class="control-label col-sm-3 line34">每天投票次数</label>
+															    <label for="hdurl" class="control-label col-sm-3 line34">入口地址</label>
 															     <div class="col-sm-8">
-															    <input type="text" name="votenumOneday" id="votenumOneday" value="$!{wxActVote.votenumOneday}" class="form-control">
-															  	</div>
-															 </div>
-															 <div class="form-group col-sm-3">
-															    <label for="isRestrictVote" class="control-label col-sm-3 line34">是否限定投票(0：否，1：是)</label>
-															     <div class="col-sm-8">
-															    <input type="text" name="isRestrictVote" id="isRestrictVote" value="$!{wxActVote.isRestrictVote}" class="form-control">
-															  	</div>
-															 </div>
-															 <div class="form-group col-sm-3">
-															    <label for="allowSignup" class="control-label col-sm-3 line34">允许选手报名(0：否，1：是)</label>
-															     <div class="col-sm-8">
-															    <input type="text" name="allowSignup" id="allowSignup" value="$!{wxActVote.allowSignup}" class="form-control">
-															  	</div>
-															 </div>
-															 <div class="form-group col-sm-3">
-															    <label for="displayUserVotingRecords" class="control-label col-sm-3 line34">显示用户投票记录(0：否，1：是)</label>
-															     <div class="col-sm-8">
-															    <input type="text" name="displayUserVotingRecords" id="displayUserVotingRecords" value="$!{wxActVote.displayUserVotingRecords}" class="form-control">
+															    <input type="text" name="hdurl" id="hdurl" value="$!{wxActVote.hdurl}" class="form-control">
 															  	</div>
 															 </div>
 															 <div class="form-group col-sm-3">
@@ -84,9 +60,27 @@
 															  	</div>
 															 </div>
 															 <div class="form-group col-sm-3">
+															    <label for="bindingMobileCanJoin" class="control-label col-sm-3 line34">是否绑定手机可参加（0：否，1：是）</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="bindingMobileCanJoin" id="bindingMobileCanJoin" value="$!{wxActVote.bindingMobileCanJoin}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="numDay" class="control-label col-sm-3 line34">每日投票次数</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="numDay" id="numDay" value="$!{wxActVote.numDay}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
 															    <label for="jwid" class="control-label col-sm-3 line34">公众号原始id</label>
 															     <div class="col-sm-8">
 															    <input type="text" name="jwid" id="jwid" value="$!{wxActVote.jwid}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="projectCode" class="control-label col-sm-3 line34">活动编码</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="projectCode" id="projectCode" value="$!{wxActVote.projectCode}" class="form-control">
 															  	</div>
 															 </div>
 															<div class="form-group col-sm-3">
@@ -106,19 +100,18 @@
 									        		<th width="80px">
 									        		 <input type="checkbox" name="ckAll" id="ckAll"  />全选
 									        		</th>
-													<th>活动编码</th>
 													<th>活动名称</th>
-													<th>活动介绍</th>
+													<th>活动描述</th>
 													<th>开始时间</th>
 													<th>结束时间</th>
-													<th>排序方式(1：参与时间 ，2：票数 ，3：编号)</th>
-													<th>每天投票次数</th>
-													<th>是否限定投票(0：否，1：是)</th>
-													<th>允许选手报名(0：否，1：是)</th>
-													<th>显示用户投票记录(0：否，1：是)</th>
+													<th>背景图</th>
+													<th>入口地址</th>
 													<th>短链接</th>
 													<th>是否关注可参加(0：否，1：是)</th>
+													<th>是否绑定手机可参加（0：否，1：是）</th>
+													<th>每日投票次数</th>
 													<th>公众号原始id</th>
+													<th>活动编码</th>
 													<th>创建时间</th>
 						                			<th>操作</th>
 									        </thead>
@@ -127,19 +120,18 @@
 								                #foreach($!{info} in $!{pageInfos})
 									            	<tr>		
 									            		<td><input type="checkbox" name="ck" value="$!{info.id}" /></td>	
-																	<td>$!{info.projectCode}</td>
 																	<td>$!{info.title}</td>
 																	<td>$!{info.description}</td>
 																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.starttime})</td>
 																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.endtime})</td>
-																	<td>$!{info.sortType}</td>
-																	<td>$!{info.votenumOneday}</td>
-																	<td>$!{info.isRestrictVote}</td>
-																	<td>$!{info.allowSignup}</td>
-																	<td>$!{info.displayUserVotingRecords}</td>
+																	<td>$!{info.banner}</td>
+																	<td>$!{info.hdurl}</td>
 																	<td>$!{info.shortUrl}</td>
 																	<td>$!{info.foucsUserCanJoin}</td>
+																	<td>$!{info.bindingMobileCanJoin}</td>
+																	<td>$!{info.numDay}</td>
 																	<td>$!{info.jwid}</td>
+																	<td>$!{info.projectCode}</td>
 																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.createTime})</td>
 										                <td class="last">
 							                			<a href="javascript:doUrl('$!{basePath}/vote/back/wxActVote/toEdit.do?id=$!{info.id}')" >编辑</a>

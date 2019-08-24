@@ -1,28 +1,32 @@
 package com.jeecg.p3.vote.web.back;
 
-import com.jeecg.p3.vote.entity.WxActVote;
-import com.jeecg.p3.vote.service.WxActVoteService;
-import org.apache.velocity.VelocityContext;
-import org.jeecgframework.p3.core.common.utils.AjaxJson;
-import org.jeecgframework.p3.core.util.SystemTools;
-import org.jeecgframework.p3.core.util.plugin.ViewVelocity;
-import org.jeecgframework.p3.core.utils.common.PageQuery;
-import org.jeecgframework.p3.core.web.BaseController;
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
+import org.jeecgframework.p3.core.util.SystemTools;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.velocity.VelocityContext;
+import org.jeecgframework.p3.core.util.plugin.ViewVelocity;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import org.jeecgframework.p3.core.common.utils.AjaxJson;
+import org.jeecgframework.p3.core.utils.common.PageQuery;
+import com.jeecg.p3.vote.entity.WxActVote;
+import com.jeecg.p3.vote.service.WxActVoteService;
+import org.jeecgframework.p3.core.web.BaseController;
 
-/**
- * 描述：</b>投票管理<br>
+ /**
+ * 描述：</b>投票活动<br>
  * @author junfeng.zhou
- * @since：2019年07月20日 09时06分08秒 星期六 
+ * @since：2019年08月20日 08时16分26秒 星期二 
  * @version:1.0
  */
 @Controller
@@ -146,6 +150,7 @@ public AjaxJson doDelete(@RequestParam(required = true, value = "id" ) String id
 		}
 		return j;
 }
+
 
 }
 

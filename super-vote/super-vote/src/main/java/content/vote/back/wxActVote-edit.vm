@@ -14,19 +14,13 @@
 						 <input type="hidden" id="btn_sub" class="btn_sub" />
 						 <input type="hidden" value="$!{wxActVote.id}" name="id" id="id" />
 												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动编码</label>
-												    <div class="col-sm-8">
-												      <input type="text" value="$!{wxActVote.projectCode}" name="projectCode" id="projectCode" class="form-control"/>
-												    </div>
-												</div>
-												<div class="form-group mno">
 												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动名称</label>
 												    <div class="col-sm-8">
 												      <input type="text" value="$!{wxActVote.title}" name="title" id="title" class="form-control"/>
 												    </div>
 												</div>
 												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动介绍</label>
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动描述</label>
 												    <div class="col-sm-8">
 												      <input type="text" value="$!{wxActVote.description}" name="description" id="description" class="form-control"/>
 												    </div>
@@ -44,33 +38,15 @@
 												    </div>
 												</div>
 												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">排序方式(1：参与时间 ，2：票数 ，3：编号)</label>
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">背景图</label>
 												    <div class="col-sm-8">
-												      <input type="text" value="$!{wxActVote.sortType}" name="sortType" id="sortType" class="form-control"/>
+												      <input type="text" value="$!{wxActVote.banner}" name="banner" id="banner" class="form-control"/>
 												    </div>
 												</div>
 												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">每天投票次数</label>
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">入口地址</label>
 												    <div class="col-sm-8">
-												      <input type="text" value="$!{wxActVote.votenumOneday}" name="votenumOneday" id="votenumOneday" class="form-control"/>
-												    </div>
-												</div>
-												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否限定投票(0：否，1：是)</label>
-												    <div class="col-sm-8">
-												      <input type="text" value="$!{wxActVote.isRestrictVote}" name="isRestrictVote" id="isRestrictVote" class="form-control"/>
-												    </div>
-												</div>
-												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">允许选手报名(0：否，1：是)</label>
-												    <div class="col-sm-8">
-												      <input type="text" value="$!{wxActVote.allowSignup}" name="allowSignup" id="allowSignup" class="form-control"/>
-												    </div>
-												</div>
-												<div class="form-group mno">
-												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">显示用户投票记录(0：否，1：是)</label>
-												    <div class="col-sm-8">
-												      <input type="text" value="$!{wxActVote.displayUserVotingRecords}" name="displayUserVotingRecords" id="displayUserVotingRecords" class="form-control"/>
+												      <input type="text" value="$!{wxActVote.hdurl}" name="hdurl" id="hdurl" class="form-control"/>
 												    </div>
 												</div>
 												<div class="form-group mno">
@@ -86,9 +62,27 @@
 												    </div>
 												</div>
 												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否绑定手机可参加（0：否，1：是）</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.bindingMobileCanJoin}" name="bindingMobileCanJoin" id="bindingMobileCanJoin" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">每日投票次数</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.numDay}" name="numDay" id="numDay" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
 												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">公众号原始id</label>
 												    <div class="col-sm-8">
 												      <input type="text" value="$!{wxActVote.jwid}" name="jwid" id="jwid" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动编码</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{wxActVote.projectCode}" name="projectCode" id="projectCode" class="form-control"/>
 												    </div>
 												</div>
 												<div class="form-group mno">

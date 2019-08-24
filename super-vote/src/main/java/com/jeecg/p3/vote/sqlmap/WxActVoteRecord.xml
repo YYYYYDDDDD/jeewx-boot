@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.vote.dao.WxActVoteRecordDao">
+
+	<!-- Result Map-->
+	<resultMap id="WxActVoteRecord" type="com.jeecg.p3.vote.entity.WxActVoteRecord" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="actid" property="actid" jdbcType="VARCHAR"/>
+		<result column="openid" property="openid" jdbcType="VARCHAR"/>
+		<result column="voter_openid" property="voterOpenid" jdbcType="VARCHAR"/>
+		<result column="voter_nickname" property="voterNickname" jdbcType="VARCHAR"/>
+		<result column="is_effective" property="isEffective" jdbcType="VARCHAR"/>
+		<result column="content" property="content" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.actid != null and query.actid != ''" >
+	  		 		/* 活动id */
+			    	AND wavr.actid =  #{query.actid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.openid != null and query.openid != ''" >
+	  		 		/* 参与人openid */
+			    	AND wavr.openid =  #{query.openid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.voterOpenid != null and query.voterOpenid != ''" >
+	  		 		/* 投票人openid */
+			    	AND wavr.voter_openid =  #{query.voterOpenid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.voterNickname != null and query.voterNickname != ''" >
+	  		 		/* 投票人微信昵称 */
+			    	AND wavr.voter_nickname =  #{query.voterNickname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isEffective != null and query.isEffective != ''" >
+	  		 		/* 是否有效(0：否，1：是) */
+			    	AND wavr.is_effective =  #{query.isEffective,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.content != null and query.content != ''" >
+	  		 		/* 投票时间 */
+			    	AND wavr.content =  #{query.content,jdbcType=TIMESTAMP}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteRecord.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  wx_act_vote_record   /* 投票记录表 */  
+					(	
+                      id                            /*  */ 
+                     ,actid                         /* 活动id */ 
+                     ,openid                        /* 参与人openid */ 
+                     ,voter_openid                  /* 投票人openid */ 
+                     ,voter_nickname                /* 投票人微信昵称 */ 
+                     ,is_effective                  /* 是否有效(0：否，1：是) */ 
+                     ,content                       /* 投票时间 */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{actid,jdbcType=VARCHAR}                         /* 活动id */ 
+                     ,#{openid,jdbcType=VARCHAR}                        /* 参与人openid */ 
+                     ,#{voterOpenid,jdbcType=VARCHAR}                   /* 投票人openid */ 
+                     ,#{voterNickname,jdbcType=VARCHAR}                 /* 投票人微信昵称 */ 
+                     ,#{isEffective,jdbcType=VARCHAR}                   /* 是否有效(0：否，1：是) */ 
+                     ,#{content,jdbcType=TIMESTAMP}                       /* 投票时间 */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteRecord.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   wx_act_vote_record  	/* 投票记录表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="actid != null">
+		    		 		/* 活动id */ 
+	    		 			actid = #{actid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="openid != null">
+		    		 		/* 参与人openid */ 
+	    		 			openid = #{openid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="voterOpenid != null">
+		    		 		/* 投票人openid */ 
+	    		 			voter_openid = #{voterOpenid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="voterNickname != null">
+		    		 		/* 投票人微信昵称 */ 
+	    		 			voter_nickname = #{voterNickname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isEffective != null">
+		    		 		/* 是否有效(0：否，1：是) */ 
+	    		 			is_effective = #{isEffective,jdbcType=VARCHAR},
+						 </if>
+						 <if test="content != null">
+		    		 		/* 投票时间 */ 
+	    		 			content = #{content,jdbcType=TIMESTAMP},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteRecord.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="WxActVoteRecord">
+		   SELECT   
+                   wavr.id                            /*  */ 
+                  ,wavr.actid                         /* 活动id */ 
+                  ,wavr.openid                        /* 参与人openid */ 
+                  ,wavr.voter_openid                  /* 投票人openid */ 
+                  ,wavr.voter_nickname                /* 投票人微信昵称 */ 
+                  ,wavr.is_effective                  /* 是否有效(0：否，1：是) */ 
+                  ,wavr.content                       /* 投票时间 */ 
+		   FROM   wx_act_vote_record      AS wavr      /* 投票记录表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteRecord.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM wx_act_vote_record 	/* 投票记录表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteRecord.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  wx_act_vote_record      AS wavr      /* 投票记录表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteRecord.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="WxActVoteRecord">
+		    SELECT 
+                   wavr.id                            /*  */ 
+                  ,wavr.actid                         /* 活动id */ 
+                  ,wavr.openid                        /* 参与人openid */ 
+                  ,wavr.voter_openid                  /* 投票人openid */ 
+                  ,wavr.voter_nickname                /* 投票人微信昵称 */ 
+                  ,wavr.is_effective                  /* 是否有效(0：否，1：是) */ 
+                  ,wavr.content                       /* 投票时间 */ 
+		FROM   	 wx_act_vote_record      AS wavr      /* 投票记录表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.vote.dao.WxActVoteParticipantsDao">
+
+	<!-- Result Map-->
+	<resultMap id="WxActVoteParticipants" type="com.jeecg.p3.vote.entity.WxActVoteParticipants" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="actid" property="actid" jdbcType="VARCHAR"/>
+		<result column="code" property="code" jdbcType="VARCHAR"/>
+		<result column="openid" property="openid" jdbcType="VARCHAR"/>
+		<result column="wx_nickname" property="wxNickname" jdbcType="VARCHAR"/>
+		<result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+		<result column="tel" property="tel" jdbcType="VARCHAR"/>
+		<result column="addr" property="addr" jdbcType="VARCHAR"/>
+		<result column="desc" property="desc" jdbcType="VARCHAR"/>
+		<result column="pic" property="pic" jdbcType="VARCHAR"/>
+		<result column="video" property="video" jdbcType="VARCHAR"/>
+		<result column="is_prohibit" property="isProhibit" jdbcType="VARCHAR"/>
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="votes" property="votes" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.actid != null and query.actid != ''" >
+	  		 		/* 活动id */
+			    	AND wavp.actid =  #{query.actid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.code != null and query.code != ''" >
+	  		 		/* 选手编号 */
+			    	AND wavp.code =  #{query.code,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.openid != null and query.openid != ''" >
+	  		 		/* 参与人openid */
+			    	AND wavp.openid =  #{query.openid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.wxNickname != null and query.wxNickname != ''" >
+	  		 		/* 参与人昵称 */
+			    	AND wavp.wx_nickname =  #{query.wxNickname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.nickname != null and query.nickname != ''" >
+	  		 		/* 昵称 */
+			    	AND wavp.nickname =  #{query.nickname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.tel != null and query.tel != ''" >
+	  		 		/* 手机号码 */
+			    	AND wavp.tel =  #{query.tel,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.addr != null and query.addr != ''" >
+	  		 		/* 用户地址 */
+			    	AND wavp.addr =  #{query.addr,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.desc != null and query.desc != ''" >
+	  		 		/* 报名宣言 */
+			    	AND wavp.desc =  #{query.desc,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.pic != null and query.pic != ''" >
+	  		 		/* 图片 */
+			    	AND wavp.pic =  #{query.pic,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.video != null and query.video != ''" >
+	  		 		/* 视频 */
+			    	AND wavp.video =  #{query.video,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isProhibit != null and query.isProhibit != ''" >
+	  		 		/* 是否禁用(0：否，1：是) */
+			    	AND wavp.is_prohibit =  #{query.isProhibit,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createTime != null and query.createTime != ''" >
+	  		 		/* 报名时间 */
+			    	AND wavp.create_time =  #{query.createTime,jdbcType=TIMESTAMP}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteParticipants.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  wx_act_vote_participants   /* 投票参与人 */  
+					(	
+                      id                            /*  */ 
+                     ,actid                         /* 活动id */ 
+                     ,code                          /* 选手编号 */ 
+                     ,openid                        /* 参与人openid */ 
+                     ,wx_nickname                   /* 参与人昵称 */ 
+                     ,nickname                      /* 昵称 */ 
+                     ,tel                           /* 手机号码 */ 
+                     ,addr                          /* 用户地址 */ 
+                     ,`desc`                          /* 报名宣言 */
+                     ,pic                           /* 图片 */ 
+                     ,video                         /* 视频 */ 
+                     ,is_prohibit                   /* 是否禁用(0：否，1：是) */ 
+                     ,create_time                   /* 报名时间 */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{actid,jdbcType=VARCHAR}                         /* 活动id */ 
+                     ,#{code,jdbcType=VARCHAR}                          /* 选手编号 */ 
+                     ,#{openid,jdbcType=VARCHAR}                        /* 参与人openid */ 
+                     ,#{wxNickname,jdbcType=VARCHAR}                    /* 参与人昵称 */ 
+                     ,#{nickname,jdbcType=VARCHAR}                      /* 昵称 */ 
+                     ,#{tel,jdbcType=VARCHAR}                           /* 手机号码 */ 
+                     ,#{addr,jdbcType=VARCHAR}                          /* 用户地址 */ 
+                     ,#{desc,jdbcType=VARCHAR}                          /* 报名宣言 */ 
+                     ,#{pic,jdbcType=VARCHAR}                           /* 图片 */ 
+                     ,#{video,jdbcType=VARCHAR}                         /* 视频 */ 
+                     ,#{isProhibit,jdbcType=VARCHAR}                    /* 是否禁用(0：否，1：是) */ 
+                     ,#{createTime,jdbcType=TIMESTAMP}                    /* 报名时间 */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteParticipants.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   wx_act_vote_participants  	/* 投票参与人 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="actid != null">
+		    		 		/* 活动id */ 
+	    		 			actid = #{actid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="code != null">
+		    		 		/* 选手编号 */ 
+	    		 			code = #{code,jdbcType=VARCHAR},
+						 </if>
+						 <if test="openid != null">
+		    		 		/* 参与人openid */ 
+	    		 			openid = #{openid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="wxNickname != null">
+		    		 		/* 参与人昵称 */ 
+	    		 			wx_nickname = #{wxNickname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="nickname != null">
+		    		 		/* 昵称 */ 
+	    		 			nickname = #{nickname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="tel != null">
+		    		 		/* 手机号码 */ 
+	    		 			tel = #{tel,jdbcType=VARCHAR},
+						 </if>
+						 <if test="addr != null">
+		    		 		/* 用户地址 */ 
+	    		 			addr = #{addr,jdbcType=VARCHAR},
+						 </if>
+						 <if test="desc != null">
+		    		 		/* 报名宣言 */ 
+	    		 			desc = #{desc,jdbcType=VARCHAR},
+						 </if>
+						 <if test="pic != null">
+		    		 		/* 图片 */ 
+	    		 			pic = #{pic,jdbcType=VARCHAR},
+						 </if>
+						 <if test="video != null">
+		    		 		/* 视频 */ 
+	    		 			video = #{video,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isProhibit != null">
+		    		 		/* 是否禁用(0：否，1：是) */ 
+	    		 			is_prohibit = #{isProhibit,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createTime != null">
+		    		 		/* 报名时间 */ 
+	    		 			create_time = #{createTime,jdbcType=TIMESTAMP},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteParticipants.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="WxActVoteParticipants">
+		   SELECT   
+                   wavp.id                            /*  */ 
+                  ,wavp.actid                         /* 活动id */ 
+                  ,wavp.code                          /* 选手编号 */ 
+                  ,wavp.openid                        /* 参与人openid */ 
+                  ,wavp.wx_nickname                   /* 参与人昵称 */ 
+                  ,wavp.nickname                      /* 昵称 */ 
+                  ,wavp.tel                           /* 手机号码 */ 
+                  ,wavp.addr                          /* 用户地址 */ 
+                  ,wavp.desc                          /* 报名宣言 */ 
+                  ,wavp.pic                           /* 图片 */ 
+                  ,wavp.video                         /* 视频 */ 
+                  ,wavp.is_prohibit                   /* 是否禁用(0：否，1：是) */ 
+                  ,wavp.create_time                   /* 报名时间 */ 
+		   FROM   wx_act_vote_participants      AS wavp      /* 投票参与人 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteParticipants.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM wx_act_vote_participants 	/* 投票参与人 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteParticipants.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  wx_act_vote_participants      AS wavp      /* 投票参与人 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.vote.entity.WxActVoteParticipants.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="WxActVoteParticipants">
+		    SELECT 
+                   wavp.id                            /*  */ 
+                  ,wavp.actid                         /* 活动id */ 
+                  ,wavp.code                          /* 选手编号 */ 
+                  ,wavp.openid                        /* 参与人openid */ 
+                  ,wavp.wx_nickname                   /* 参与人昵称 */ 
+                  ,wavp.nickname                      /* 昵称 */ 
+                  ,wavp.tel                           /* 手机号码 */ 
+                  ,wavp.addr                          /* 用户地址 */ 
+                  ,wavp.desc                          /* 报名宣言 */ 
+                  ,wavp.pic                           /* 图片 */ 
+                  ,wavp.video                         /* 视频 */ 
+                  ,wavp.is_prohibit                   /* 是否禁用(0：否，1：是) */ 
+                  ,wavp.create_time                   /* 报名时间 */ 
+		FROM   	 wx_act_vote_participants      AS wavp      /* 投票参与人 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+
+
+	<select id="selectAllSignUpUsers" resultMap="WxActVoteParticipants">
+		    SELECT
+                   wavp.id                            /*  */
+                  ,wavp.actid                         /* 活动id */
+                  ,wavp.code                          /* 选手编号 */
+                  ,wavp.openid                        /* 参与人openid */
+                  ,wavp.wx_nickname                   /* 参与人昵称 */
+                  ,wavp.nickname                      /* 昵称 */
+                  ,wavp.tel                           /* 手机号码 */
+                  ,wavp.addr                          /* 用户地址 */
+                  ,wavp.desc                          /* 报名宣言 */
+                  ,wavp.pic                           /* 图片 */
+                  ,wavp.video                         /* 视频 */
+                  ,wavp.is_prohibit                   /* 是否禁用(0：否，1：是) */
+                  ,wavp.create_time                   /* 报名时间 */
+                  ,(SELECT count(1) FROM wx_act_vote_record b WHERE b.openid = wavp.openid) votes
+		FROM   	 wx_act_vote_participants      AS wavp      /* 投票参与人 */
+
+	</select>
+
+
+	<select id="countByOpenId" resultType="long">
+		    SELECT
+				COUNT(1)
+			FROM
+				wx_act_vote_participants
+			WHERE
+				openid =#{openId}
+	</select>
+
+</mapper>

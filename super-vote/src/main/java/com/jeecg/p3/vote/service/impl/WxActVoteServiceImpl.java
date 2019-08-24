@@ -15,9 +15,9 @@ import com.jeecg.p3.vote.entity.WxActVote;
 import com.jeecg.p3.vote.dao.WxActVoteDao;
 
 /**
- * 描述：</b>投票管理<br>
+ * 描述：</b>投票活动<br>
  * @author：junfeng.zhou
- * @since：2019年07月20日 09时06分08秒 星期六 
+ * @since：2019年08月20日 08时16分26秒 星期二 
  * @version:1.0
  */
 @Service("wxActVoteService")
